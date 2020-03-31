@@ -78,19 +78,6 @@ form {
   padding: 5px;
 }
 
-.list_item {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #545f66;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 button {
   padding: 10px;
   border-style: solid;

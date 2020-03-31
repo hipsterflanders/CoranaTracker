@@ -77,15 +77,6 @@ form{
  padding: 5px;
 }
 
-.list_item{
-    justify-content: center;
-    color: $color1;
-    border-radius: 5px;
-    margin:5px;
-    padding: 5px;
-    width: fit-content;
-}
-
 button{
         padding: 10px;
         @include thickborder();
