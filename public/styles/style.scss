@@ -1,0 +1,111 @@
+@import "./variables";
+@import './palette';
+
+body {
+    font-family: $font;
+    background: white;
+  }
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+@mixin thickborder(){
+    border-style: solid;
+    border-width: initial;
+
+}
+
+header{
+    @include flexCenter();
+
+    font-family: $font;
+    color: $color1;
+
+    background: $color1;
+    //height: 10vh;
+    h1{
+        color: $color4;
+    }
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    /*height: 100vh; */
+    margin:auto;
+}
+
+.chart{
+    margin: auto;
+}
+
+.messageHolder{
+    //@include flexCenter();
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info{
+    font-family: $font;
+    color: $color1;
+}
+
+.contact{
+    @extend header;
+    color: $color1;
+    h1{
+        font-size: 1em;
+    }
+}
+
+form{
+    padding: 10px;
+}
+
+#cameraview{
+    border-radius: 5px;
+    background-color: $color1;
+}
+
+.message{
+ background: $color1;
+ border-radius: 2px;
+ color: white;
+ padding: 5px;
+}
+
+.list_item{
+    justify-content: center;
+    color: $color1;
+    border-radius: 5px;
+    margin:5px;
+    padding: 5px;
+    width: fit-content;
+}
+
+button{
+        padding: 10px;
+        @include thickborder();
+        border-color: $color3;
+        border-radius: 5px;
+        background: $color2;
+        //font-family: Arial, Helvetica, sans-serif;
+        font-family: $font;
+        font-weight: bold;
+        color: $color3;
+        &:hover{
+            @include thickborder();
+            background: $color3;
+            color: $color2;
+            border-color: $color2;
+        }
+        &::after{
+            @include thickborder();
+            background: $color3;
+            color: $color2;
+            border-color: $color2;
+        }
+}

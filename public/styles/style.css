@@ -1,0 +1,121 @@
+/* Coolors Exported Palette - coolors.co/545f66-829399-d0f4ea-e8fcc2-b1cc74 */
+/* HSL */
+/* RGB */
+body {
+  font-family: "Sen", sans-serif;
+  background: white;
+}
+
+header, .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  font-family: "Sen", sans-serif;
+  color: #545f66;
+  background: #545f66;
+}
+
+header h1, .contact h1 {
+  color: #e8fcc2;
+}
+
+#content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*height: 100vh; */
+  margin: auto;
+}
+
+.chart {
+  margin: auto;
+}
+
+.messageHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.info {
+  font-family: "Sen", sans-serif;
+  color: #545f66;
+}
+
+.contact {
+  color: #545f66;
+}
+
+.contact h1 {
+  font-size: 1em;
+}
+
+form {
+  padding: 10px;
+}
+
+#cameraview {
+  border-radius: 5px;
+  background-color: #545f66;
+}
+
+.message {
+  background: #545f66;
+  border-radius: 2px;
+  color: white;
+  padding: 5px;
+}
+
+.list_item {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #545f66;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+button {
+  padding: 10px;
+  border-style: solid;
+  border-width: initial;
+  border-color: #d0f4ea;
+  border-radius: 5px;
+  background: #829399;
+  font-family: "Sen", sans-serif;
+  font-weight: bold;
+  color: #d0f4ea;
+}
+
+button:hover {
+  border-style: solid;
+  border-width: initial;
+  background: #d0f4ea;
+  color: #829399;
+  border-color: #829399;
+}
+
+button::after {
+  border-style: solid;
+  border-width: initial;
+  background: #d0f4ea;
+  color: #829399;
+  border-color: #829399;
+}
+/*# sourceMappingURL=style.css.map */
