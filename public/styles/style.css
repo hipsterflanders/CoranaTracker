@@ -1,9 +1,14 @@
 /* Coolors Exported Palette - coolors.co/545f66-829399-d0f4ea-e8fcc2-b1cc74 */
-/* HSL */
 /* RGB */
 body {
   font-family: "Sen", sans-serif;
-  background: white;
+  background: #9695A6;
+}
+
+#bom {
+  margin-left: 20vw;
+  width: 60vw;
+  height: 60vh;
 }
 
 header, .contact {
@@ -17,12 +22,11 @@ header, .contact {
       -ms-flex-align: top;
           align-items: top;
   font-family: "Sen", sans-serif;
-  color: #545f66;
-  background: #545f66;
+  color: #484759;
 }
 
 header h1, .contact h1 {
-  color: #e8fcc2;
+  color: white;
 }
 
 #content {
@@ -51,11 +55,11 @@ header h1, .contact h1 {
 
 .info {
   font-family: "Sen", sans-serif;
-  color: #545f66;
+  color: #484759;
 }
 
 .contact {
-  color: #545f66;
+  color: #484759;
 }
 
 .contact h1 {
@@ -68,11 +72,11 @@ form {
 
 #cameraview {
   border-radius: 5px;
-  background-color: #545f66;
+  background-color: #484759;
 }
 
 .message {
-  background: #545f66;
+  background: #484759;
   border-radius: 2px;
   color: white;
   padding: 5px;
@@ -82,27 +86,27 @@ button {
   padding: 10px;
   border-style: solid;
   border-width: initial;
-  border-color: #d0f4ea;
+  border-color: #9695A6;
   border-radius: 5px;
-  background: #829399;
+  background: #8C877E;
   font-family: "Sen", sans-serif;
   font-weight: bold;
-  color: #d0f4ea;
+  color: #9695A6;
 }
 
 button:hover {
   border-style: solid;
   border-width: initial;
-  background: #d0f4ea;
-  color: #829399;
-  border-color: #829399;
+  background: #9695A6;
+  color: #8C877E;
+  border-color: #8C877E;
 }
 
 button::after {
   border-style: solid;
   border-width: initial;
-  background: #d0f4ea;
-  color: #829399;
-  border-color: #829399;
+  background: #9695A6;
+  color: #8C877E;
+  border-color: #8C877E;
 }
 /*# sourceMappingURL=style.css.map */

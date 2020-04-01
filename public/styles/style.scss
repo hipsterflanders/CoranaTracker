@@ -3,7 +3,7 @@
 
 body {
     font-family: $font;
-    background: white;
+    background: $color3;
   }
 
 @mixin flexCenter {
@@ -18,16 +18,21 @@ body {
 
 }
 
+#bom{
+    margin-left: 20vw;
+    width: 60vw;
+    height: 60vh;
+}
+
 header{
     @include flexCenter();
 
     font-family: $font;
     color: $color1;
 
-    background: $color1;
     //height: 10vh;
     h1{
-        color: $color4;
+        color: white;
     }
 }
 
