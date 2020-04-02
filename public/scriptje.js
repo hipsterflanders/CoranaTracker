@@ -1,8 +1,8 @@
 var svg = null;
 
-var width = 450
-height = 450
-margin = 40;
+const width = 450
+const height = 450
+const margin = 40;
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
 var radius = Math.min(width, height) / 2 - margin
@@ -70,8 +70,8 @@ function tekenVlam(cx, cy) {
 function updateVonk(cx, cy) {
     const np = 16;
     const hoek = 2 * Math.PI / np;
-    x = cx + Math.cos(hoek * i) * 50;
-    y = cy + Math.sin(hoek * i) * 50;
+    var x = cx + Math.cos(hoek * i) * 50;
+    var y = cy + Math.sin(hoek * i) * 50;
     const r = 50;
     const dr = 20;
 
@@ -88,7 +88,7 @@ function updateVonk(cx, cy) {
 var gx = 620;
 var gy = 80;
 function updateLont(ratio) {
-    lengte = Math.round(ratio * 100);
+    const lengte = Math.round(ratio * 100);
     var dx = 20;
     var dy = -20;
     gx = 620;
