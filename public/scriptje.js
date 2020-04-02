@@ -27,7 +27,9 @@ async function getNumbers() {
     const response = await fetch('/corona');
     const jsonData = await response.json();
 
-    //document.getElementById("infected").textContent = jsonData.geinfecteerd;
+    document.getElementById("aantalintensieve").textContent = jsonData.belintensive;
+    document.getElementById("maximumcapaciteit").textContent = maxIntensive;
+    document.getElementById("overleden").textContent = jsonData.beloverleden;
 
     // Create data
     ratio = jsonData.belintensive / maxIntensive;
@@ -45,6 +47,7 @@ function updateNumbers() {
     }
     path.setAttribute("d", updateLont(ratio));
     vlam.setAttribute("d", updateVonk(gx, gy));
+
     setTimeout(updateNumbers, 100);
 }
 

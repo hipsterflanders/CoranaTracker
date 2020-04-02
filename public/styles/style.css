@@ -12,21 +12,68 @@ body {
 }
 
 header, .contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: top;
-      -ms-flex-align: top;
-          align-items: top;
   font-family: "Sen", sans-serif;
   color: #484759;
+  height: 100vh;
 }
 
 header h1, .contact h1 {
   color: white;
+  background-color: black;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-shadow: 0.5em 0 0 black,-0.5em 0 0 #343132;
+          box-shadow: 0.5em 0 0 black,-0.5em 0 0 #343132;
+}
+
+footer {
+  color: grey;
+}
+
+.story {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  min-width: 80vw;
+}
+
+.story h1, .story h2 {
+  color: white;
+  background-color: #484759;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.story span {
+  color: black;
+  background-color: white;
+}
+
+.story .warning {
+  color: darkred;
+  background-color: pink;
+}
+
+.story ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.story tr {
+  text-align: right;
+  color: black;
+  background-color: white;
+}
+
+.story tr span {
+  float: right;
+  background-color: orange;
+}
+
+.story a {
+  background-color: black;
+  color: orange;
 }
 
 #content {
