@@ -19,7 +19,7 @@ window.addEventListener('load', (event) => {
 
 });
 
-const maxIntensive = 2220;
+const maxIntensive = 2293;
 var ratio = 1;
 
 async function getNumbers() {
@@ -32,7 +32,7 @@ async function getNumbers() {
     document.getElementById("overleden").textContent = jsonData.beloverleden;
 
     // Create data
-    ratio = jsonData.belintensive / maxIntensive;
+    ratio = 1 - jsonData.belintensive / maxIntensive;
     //console.log(ratio);
 }
 
