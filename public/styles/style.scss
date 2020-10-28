@@ -3,7 +3,7 @@
 
 body {
     font-family: $font;
-    background: $color3;
+    background: black;
   }
 
 @mixin flexCenter {
@@ -34,9 +34,7 @@ header{
     //height: 10vh;
     h1{
         color: white;
-        background-color: black;
         width: fit-content;
-        box-shadow: 0.5em 0 0 black,-0.5em 0 0 #343132;
     }
 }
 
@@ -49,7 +47,6 @@ footer{
     margin-right: 10vw;
     h1, h2{
         color: white;
-        background-color: $color1;
         width: fit-content;
     }
     span{

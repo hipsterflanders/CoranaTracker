@@ -2,7 +2,7 @@
 /* RGB */
 body {
   font-family: "Sen", sans-serif;
-  background: #9695A6;
+  background: black;
 }
 
 #bom {
@@ -19,12 +19,9 @@ header, .contact {
 
 header h1, .contact h1 {
   color: white;
-  background-color: black;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-box-shadow: 0.5em 0 0 black,-0.5em 0 0 #343132;
-          box-shadow: 0.5em 0 0 black,-0.5em 0 0 #343132;
 }
 
 footer {
@@ -39,7 +36,6 @@ footer {
 
 .story h1, .story h2 {
   color: white;
-  background-color: #484759;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
