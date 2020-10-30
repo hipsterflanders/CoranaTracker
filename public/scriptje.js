@@ -28,7 +28,7 @@ async function getNumbers() {
     const jsonData = await response.json();
 
     document.getElementById("aantalintensieve").textContent = jsonData.belintensive;
-    document.getElementById("maximumcapaciteit").textContent = maxIntensive;
+    document.getElementById("maximumcapaciteit").textContent = maxIntensive.toString();
     document.getElementById("overleden").textContent = jsonData.beloverleden;
 
     // Create data
