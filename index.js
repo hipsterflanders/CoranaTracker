@@ -2,12 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const express = require("express");
+const http = require("http");
 const Datastore = require("nedb");
 const fetch = require("node-fetch");
 const app = express();
 require('dotenv').config();
+const server = http.createServer(app);
 const port = Number.parseInt(process.env.PORT) || 3000;
-app.listen(port, () => console.log(`Starting server at ${port}`));
+server.listen(port, () => console.log(`Starting server at ${port}`));
 app.use(express.static('public'));
 app.use(express.json({ limit: '1Gb' }));
 var database = new Datastore('database.db');

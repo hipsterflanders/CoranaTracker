@@ -1,4 +1,7 @@
 import express = require('express');
+import http = require('http');
+import  path = require('path');
+
 import fs = require('fs');
 import Datastore = require('nedb');
 import fetch = require('node-fetch');
@@ -7,8 +10,9 @@ import corona = require('./corona');
 const app = express();
 require('dotenv').config();
 
+const server = http.createServer(app);
 const port:number = Number.parseInt(process.env.PORT) || 3000;
-app.listen(port, () => console.log(`Starting server at ${port}`));
+server.listen(port, () => console.log(`Starting server at ${port}`));
 app.use(express.static('public'));
 app.use(express.json({ limit: '1Gb' }));
 
