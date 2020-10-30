@@ -2,7 +2,7 @@
 /* RGB */
 body {
   font-family: "Sen", sans-serif;
-  background: black;
+  background: #f22d0d;
 }
 
 #bom {
@@ -16,16 +16,15 @@ header, .contact {
   color: #484759;
   height: 100vh;
 }
-
 header h1, .contact h1 {
   color: white;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  text-align: center;
+  font-size: 4em;
 }
 
 footer {
-  color: grey;
+  color: #993617;
+  margin-left: 1em;
 }
 
 .story {
@@ -33,53 +32,42 @@ footer {
   margin-right: 10vw;
   min-width: 80vw;
 }
-
 .story h1, .story h2 {
   color: white;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
-
+.story ol, .story li {
+  color: white;
+}
 .story span {
   color: black;
   background-color: white;
 }
-
 .story .warning {
-  color: darkred;
-  background-color: pink;
+  color: lightgrey;
+  background-color: black;
 }
-
 .story ul {
   padding: 0;
   list-style-type: none;
 }
-
 .story tr {
   text-align: right;
   color: black;
   background-color: white;
 }
-
 .story tr span {
   float: right;
-  background-color: orange;
+  background-color: #fff700;
 }
-
 .story a {
   background-color: black;
   color: orange;
 }
 
 #content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   /*height: 100vh; */
   margin: auto;
 }
@@ -89,11 +77,8 @@ footer {
 }
 
 .messageHolder {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .info {
@@ -104,7 +89,6 @@ footer {
 .contact {
   color: #484759;
 }
-
 .contact h1 {
   font-size: 1em;
 }
@@ -136,7 +120,6 @@ button {
   font-weight: bold;
   color: #9695A6;
 }
-
 button:hover {
   border-style: solid;
   border-width: initial;
@@ -144,7 +127,6 @@ button:hover {
   color: #8C877E;
   border-color: #8C877E;
 }
-
 button::after {
   border-style: solid;
   border-width: initial;
@@ -152,4 +134,3 @@ button::after {
   color: #8C877E;
   border-color: #8C877E;
 }
-/*# sourceMappingURL=style.css.map */
