@@ -1,18 +1,13 @@
 import express = require('express');
-import http = require('http');
-import  path = require('path');
-
 import fs = require('fs');
 import Datastore = require('nedb');
 import fetch = require('node-fetch');
 import corona = require('./corona');
-
 const app = express();
 require('dotenv').config();
 
-const server = http.createServer(app);
 const port:number = Number.parseInt(process.env.PORT) || 3000;
-server.listen(port, () => console.log(`Starting server at ${port}`));
+app.listen(port, () => console.log(`Starting server at ${port}`));
 app.use(express.static('public'));
 app.use(express.json({ limit: '1Gb' }));
 
@@ -25,7 +20,7 @@ get_sciensano_MORT_Data();
 setInterval(() => {
     get_sciensano_ICU_Data();
     get_sciensano_MORT_Data();
-}, 360000000); // update each hour
+}, 10*1000); // update each hour
 
 interface CovidData {
     beloverleden:number;
@@ -46,9 +41,9 @@ async function get_sciensano_ICU_Data() {
         const sciensano_ICU_json = await sciensano_ICU_response.json();
 
         var d:Date = new Date();
-        let todays_date:String = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + (d.getDate() - 1);
+        let todays_date:String = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + (d.getDate()<10?"0":"") + (d.getDate() - 1);
         total_in_ICU = 0;
-        var i:number = sciensano_ICU_json.length - 1;
+        let i:number = sciensano_ICU_json.length - 1;
 
         while (sciensano_ICU_json[i].DATE == todays_date) {
             total_in_ICU += parseInt(sciensano_ICU_json[i].TOTAL_IN_ICU, 10);
@@ -74,7 +69,7 @@ async function get_sciensano_MORT_Data() {
         });
 
         let d:Date = new Date();
-        let todays_date:String = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + (d.getDate() - 1);
+        let todays_date:string = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + (d.getDate() - 1);
         console.log("Deathtoll number is: " + total_dead + " updated on " + todays_date);
 
     } catch (err) {
