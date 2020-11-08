@@ -9,14 +9,17 @@ var radius = Math.min(width, height) / 2 - margin
 
 var path = null;
 var vlam = null;
+var explosie = null;
 window.addEventListener('load', (event) => {
     path = tekenLont(1);
     vlam = tekenVlam(100, 100);
-    updateNumbers();
     path.setAttribute("d", updateLont(ratio));
     document.getElementById("bom").appendChild(path);
     document.getElementById("bom").appendChild(vlam);
+    explosie = tekenOntploffing();
+    document.getElementById("explosie").appendChild(explosie);
 
+    updateNumbers();
 });
 
 const maxIntensive = 2293;
@@ -45,8 +48,17 @@ function updateNumbers() {
         getNumbers();
         t = 0;
     }
-    path.setAttribute("d", updateLont(ratio));
-    vlam.setAttribute("d", updateVonk(gx, gy));
+
+    if (false) {
+        path.setAttribute("d", updateLont(ratio));
+        vlam.setAttribute("d", updateVonk(gx, gy));
+    } else {
+        explosieSVG = document.getElementById("explosie");
+        explosieSVG.setAttribute("display", "block");
+        explosie.setAttribute("d", updateExplosie(gx, gy));
+        document.getElementById("bom").setAttribute("display", "none");
+    }
+
 
     setTimeout(updateNumbers, 100);
 }
@@ -70,6 +82,31 @@ function tekenVlam(cx, cy) {
     return vpath;
 }
 
+function tekenOntploffing() {
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("fill", "orange");
+    path.setAttribute("stroke", "none");
+    return path;
+}
+
+function updateExplosie(cx, cy) {
+    const np = 16;
+    const hoek = 2 * Math.PI / np;
+    var x = cx + Math.cos(hoek * i) * 50;
+    var y = cy + Math.sin(hoek * i) * 50;
+    const r = 50;
+    const dr = 20;
+
+    var d = `M${cx} ${cy}`;
+    for (var i = 0; i < np + 1; i++) {
+
+        x = cx + Math.cos(hoek * i) * (r + i % 2 * (dr + Math.random() * 50));
+        y = cy + Math.sin(hoek * i) * (r + i % 2 * (dr + Math.random() * 50));
+        d += " L" + x + " " + y;
+    }
+    return d;
+}
+
 function updateVonk(cx, cy) {
     const np = 16;
     const hoek = 2 * Math.PI / np;
@@ -81,8 +118,8 @@ function updateVonk(cx, cy) {
     var d = `M${cx} ${cy}`;
     for (var i = 0; i < np + 1; i++) {
 
-        x = cx + Math.cos(hoek * i) * (r + i % 2 * (dr+Math.random()*50));
-        y = cy + Math.sin(hoek * i) * (r + i % 2 * (dr+Math.random()*50));
+        x = cx + Math.cos(hoek * i) * (r + i % 2 * (dr + Math.random() * 50));
+        y = cy + Math.sin(hoek * i) * (r + i % 2 * (dr + Math.random() * 50));
         d += " L" + x + " " + y;
     }
     return d;
@@ -90,6 +127,7 @@ function updateVonk(cx, cy) {
 
 var gx = 620;
 var gy = 80;
+
 function updateLont(ratio) {
     const lengte = Math.round(ratio * 100);
     var dx = 20;

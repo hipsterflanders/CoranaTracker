@@ -32,6 +32,10 @@ footer {
   margin-right: 10vw;
   min-width: 80vw;
 }
+.story .icon-margin {
+  margin-left: 2vw;
+  display: inline;
+}
 .story h1, .story h2 {
   color: white;
   width: fit-content;
