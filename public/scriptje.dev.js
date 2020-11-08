@@ -9,14 +9,14 @@ var radius = Math.min(width, height) / 2 - margin;
 var path = null;
 var vlam = null;
 var explosie = null;
+var bomSVG = document.getElementById("bom");
 window.addEventListener('load', function (event) {
   path = tekenLont(1);
   vlam = tekenVlam(100, 100);
   path.setAttribute("d", updateLont(ratio));
-  document.getElementById("bom").appendChild(path);
-  document.getElementById("bom").appendChild(vlam);
-  explosie = tekenOntploffing();
-  document.getElementById("explosie").appendChild(explosie);
+  bomSVG = document.getElementById("bom");
+  bomSVG.appendChild(path);
+  bomSVG.appendChild(vlam);
   updateNumbers();
 });
 var maxIntensive = 2293;
@@ -53,6 +53,7 @@ function getNumbers() {
 }
 
 var t = 0;
+var exploded = false;
 
 function updateNumbers() {
   t++;
@@ -62,14 +63,28 @@ function updateNumbers() {
     t = 0;
   }
 
-  if (false) {
+  if (ratio > 0) {
     path.setAttribute("d", updateLont(ratio));
     vlam.setAttribute("d", updateVonk(gx, gy));
   } else {
-    explosieSVG = document.getElementById("explosie");
-    explosieSVG.setAttribute("display", "block");
-    explosie.setAttribute("d", updateExplosie(gx, gy));
-    document.getElementById("bom").setAttribute("display", "none");
+    if (!exploded) {
+      exploded = true;
+
+      while (bomSVG.children.length > 0) {
+        bomSVG.children[0].remove();
+      }
+
+      explosie = tekenOntploffing("orange");
+      bomSVG.appendChild(explosie);
+      explosie2 = tekenOntploffing("yellow");
+      bomSVG.appendChild(explosie2);
+      explosie3 = tekenOntploffing("white");
+      bomSVG.appendChild(explosie3);
+    }
+
+    explosie.setAttribute("d", updateExplosie(605, 150, 2));
+    explosie2.setAttribute("d", updateExplosie(605, 150, 1));
+    explosie3.setAttribute("d", updateExplosie(605, 150, 0));
   }
 
   setTimeout(updateNumbers, 100);
@@ -92,25 +107,26 @@ function tekenVlam(cx, cy) {
   return vpath;
 }
 
-function tekenOntploffing() {
+function tekenOntploffing(color) {
   var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("fill", "orange");
+  path.setAttribute("fill", color);
   path.setAttribute("stroke", "none");
   return path;
 }
 
-function updateExplosie(cx, cy) {
-  var np = 16;
+function updateExplosie(cx, cy, number) {
+  var np = 16 + Math.round(Math.random() * 2) * 2;
   var hoek = 2 * Math.PI / np;
-  var x = cx + Math.cos(hoek * i) * 50;
-  var y = cy + Math.sin(hoek * i) * 50;
-  var r = 50;
-  var dr = 20;
+  var offset = 0 + Math.random() * Math.PI / 10;
+  var x = cx + Math.cos(hoek * i + offset) * 50;
+  var y = cy + Math.sin(hoek * i + offset) * 50;
+  var r = 200 + number * 50;
+  var dr = 200 + Math.random() * 100 + number * 50;
   var d = "M".concat(cx, " ").concat(cy);
 
   for (var i = 0; i < np + 1; i++) {
-    x = cx + Math.cos(hoek * i) * (r + i % 2 * (dr + Math.random() * 50));
-    y = cy + Math.sin(hoek * i) * (r + i % 2 * (dr + Math.random() * 50));
+    x = cx + Math.cos(hoek * i + offset) * (r + i % 2 * (dr + Math.random() * 100));
+    y = cy + Math.sin(hoek * i + offset) * (r + i % 2 * (dr + Math.random() * 100));
     d += " L" + x + " " + y;
   }
 

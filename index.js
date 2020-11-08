@@ -17,7 +17,7 @@ get_sciensano_MORT_Data();
 setInterval(() => {
     get_sciensano_ICU_Data();
     get_sciensano_MORT_Data();
-}, 10 * 1000);
+}, 60*60 * 1000);
 app.get('/corona', (request, response) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     const covidata = { beloverleden: total_dead, belintensive: total_in_ICU };
     response.json(covidata);
